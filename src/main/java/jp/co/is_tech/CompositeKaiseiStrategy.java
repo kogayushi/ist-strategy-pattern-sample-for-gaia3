@@ -1,20 +1,15 @@
 package jp.co.is_tech;
 
-import java.time.LocalDate;
 import java.util.Collections;
 import java.util.List;
 
-public class CompositeKaiseiStrategy implements KaiseiStrategy {
+public class CompositeKaiseiStrategy extends KaiseiStrategy {
 
     private final List<KaiseiStrategy> strategies;
 
     public CompositeKaiseiStrategy(List<KaiseiStrategy> strategies) {
+        super(null);
         this.strategies = Collections.unmodifiableList(strategies);
-    }
-
-    @Override
-    public LocalDate getBaseDate() {
-        throw new UnsupportedOperationException("cannot call this method");
     }
 
     @Override

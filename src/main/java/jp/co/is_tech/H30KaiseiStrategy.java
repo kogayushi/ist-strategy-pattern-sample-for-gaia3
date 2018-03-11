@@ -1,15 +1,12 @@
 package jp.co.is_tech;
 
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-
 import java.time.LocalDate;
 
-@RequiredArgsConstructor
-public class H30KaiseiStrategy implements KaiseiStrategy {
+public class H30KaiseiStrategy extends KaiseiStrategy {
 
-    @Getter
-    private final LocalDate baseDate;
+    public H30KaiseiStrategy(LocalDate baseDate) {
+        super(baseDate);
+    }
 
     @Override
     public void calculate() {

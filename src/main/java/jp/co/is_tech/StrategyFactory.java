@@ -16,7 +16,7 @@ public class StrategyFactory {
         strategies.add(new H30KaiseiStrategy(LocalDate.of(2018,4,1)));
 
         return new CompositeKaiseiStrategy(strategies.stream()
-                         .filter(strategy -> targetDate.isAfter(strategy.getBaseDate()) || targetDate.equals(strategy.getBaseDate()))
+                         .filter(strategy -> targetDate.isAfter(strategy.baseDate) || targetDate.equals(strategy.baseDate))
                          .collect(Collectors.toList()));
     }
 }
